@@ -21,7 +21,16 @@ public class Homework1 {
         int seedbedWidth = 15;
         int free = squareTotal - seedbedLength * seedbedWidth;
 
-        System.out.println("Свободно " + free + " кв. м.");
+        System.out.println("Свободно: " + free + " кв. м.");
+
+//        Найдите площадь овального кольца, полученного из овала площадью 15 дм2 вырезанием овала площадью 600 см2.
+
+        int ellipse1 = 15; // дм
+        int ellipse2 = 600; // см
+        int ring = ellipse1 * 100 - ellipse2;
+
+        System.out.println("Площадь кольца: " + ring);
+
 
 //         Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n.
 //         Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.
@@ -33,7 +42,7 @@ public class Homework1 {
         double resN = Math.abs (10 - n);
         double answer = (resM > resN) ? n : m;
 
-        System.out.println("Ближайшее к десяти " + answer);
+        System.out.println("Ближайшее к десяти: " + answer);
 
 //        Создать программу, выводящую в консоль наибольшую цифру любого трехзначного натурального числа. Примеры работы программы:
 //        В числе 208 наибольшая цифра 8
