@@ -10,9 +10,9 @@ public class Homework1 {
         int width = 13;
         int height = 30;
         int square = 2 * (length * width + length * height + width * height);
-        int result = (width > height) ? width : height;
-
-        System.out.println("Наибольшее из значений ширины и высоты: " + result);
+        System.out.println("Площадь параллелепипеда" + square);
+        String result = (width > height) ?("ширина больше высоты") : ("высота больше или равна ширине");
+        System.out.println(result);
 
 //        На садовом участке площадью 10 соток , разбили грядки 15 на 25 метров. Сколько м2 осталось незанято?
 
