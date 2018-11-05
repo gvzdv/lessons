@@ -1,11 +1,8 @@
 package lesson7.homework;
 
-import java.util.Arrays;
-
 public class Pupil {
     int id;
 
-    //    int exQuantity;
     public Pupil(int id) {
         this.id = id;
     }
@@ -21,8 +18,6 @@ public class Pupil {
                 } else System.out.println("Проставьте корректную оценку.");
             }
         } else System.out.println("Количество предметов не соответствует количеству оценок");
-
-
     }
 
     @Override
