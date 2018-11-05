@@ -1,30 +1,56 @@
 package lesson4.homework;
 
-import java.util.Arrays;
-
 public class Library {
-    private int size = 20;
-    private Book[] books = new Book[size];
+    int quantity;
+    int size;
+    int left;
+    private int reserved;
+    Book[] books;
+
+    public Library(int size) {
+        this.size = size;
+        Book[] books = new Book[size];
+        this.books = books;
+    }
+
 
     public void put(Book book, int quantity) {
-        for (int i = 0; i < quantity; i++) {
-            if (books[i] == null) {
+        if (reserved < size) {
+            left = quantity;
+            for (int i = 0; i < size; i++) {
+                if (books[i] == null && left > 0) {
                     books[i] = book;
-                        return;
-                } quantity += i;
-                continue;
+                    left--;
+                    reserved++;
+                    if (reserved == size) {
+                        System.out.println("Места нет, внесено " + (quantity - left) + " шт. книги " + book.getTitle());
+                        if (left > 0) {
+                            System.out.println("Не внесено " + left + " шт. книги " + book.getTitle());
+                        }
+                    }
+                }
             }
-            System.out.println("Места нет");
-        }
-//    public int get(Book book, int quantity) {
-//        for (int i = quantity; i > 0; i--) {
-//            if (books[i] == book) {
-//                books[i] = null;
-//                quantity--;}
-//            } ;
-//        }
+            System.out.println("Bнесено " + quantity + "шт. книги" + book.getTitle());
 
-    public void showBooks() {
-        System.out.println(Arrays.toString(books));
+        } else System.out.println("Места нет");
+    }
+
+    public int get(Book book, int quantity) {
+        left = quantity;
+        for (int i = 0; i < size; i++) {
+            if (left == 0) {
+                System.out.println("Извлечено " + quantity + " шт. книги " + book.getTitle());
+                break;
+            }
+            if (book.equals(books[i])) {
+                books[i] = null;
+                left--;
+                reserved--;
+            }
+        }
+        if (left > 0) {
+            System.out.println("Извлечено " + (quantity - left) + " шт. книги " + book.getTitle() + "; не извлечено " + left + "шт.; больше в библиотеке нет.");
+        }
+        return quantity;
     }
 }
