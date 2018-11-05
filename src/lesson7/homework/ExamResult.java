@@ -1,18 +1,19 @@
 package lesson7.homework;
 
-import java.util.ArrayList;
+public class ExamResult{
+    String ex;
+    int marks;
+    boolean passed;
 
-public class ExamResult {
-    int index;
-    String id;
-    String[] ex;
-    int[] marks;
-    public ArrayList examResult = new ArrayList();
-
-    public ExamResult(int index, String id, String[] ex, int[] marks) {
-        this.index = index;
-        this.id = id;
+    public ExamResult(String ex, int marks) {
         this.ex = ex;
         this.marks = marks;
+        this.passed = marks > 2;
+    }
+
+    @Override
+    public String toString() {
+        if (passed) return ex + " сдал";
+        else return ex + " не сдал";
     }
 }

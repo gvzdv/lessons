@@ -3,50 +3,35 @@ package lesson7.homework;
 import java.util.Arrays;
 
 public class Pupil {
-    private int  id;
-    String[] ex = new String[2];
-    int[] marks = new int[2];
-//    private ExamResult[] examResults;
-    public Pupil(int id){
+    int id;
+
+    //    int exQuantity;
+    public Pupil(int id) {
         this.id = id;
     }
 
-    public void setExams(String ex0, String ex1, int marks0, int marks1){
-        ex[0] = ex0;
-        ex[1] = ex1;
-        marks[0] = marks0;
-        marks[1] = marks1;
+    ExamResult[] examResults = new ExamResult[2];
+
+
+    public void setExams(String ex[], int marks[]) {
+        if (ex.length == marks.length) {
+            for (int i = 0; i < ex.length; i++) {
+                if ((marks[i] > 0) && (marks[i] < 6)) {
+                    examResults[i] = new ExamResult(ex[i], marks[i]);
+                } else System.out.println("Проставьте корректную оценку.");
+            }
+        } else System.out.println("Количество предметов не соответствует количеству оценок");
+
+
     }
-
-//    public void setExams(String[] ex, int[] marks){
-//        for (int i = 0; i < ex.length; i++){
-//            examResults[i] = new ExamResult(ex[i], marks[i]);
-//        }
-//    }
-
-//    class ExamResult{
-//        boolean passed;
-//        int i = 0;
-//        String report;
-//        public void pass(){
-//            if ((marks[i] == 2) || (marks[i] == 1)){
-//                passed = false;
-//            } else passed = true;
-//        }
-//        if (passed == false){
-//            report = "Не сдал";
-//        } else report = "Сдал";
-//
-//        String[] examRes = new String[3]{ex[1], marks[1], };
-//
-//    }
 
     @Override
     public String toString() {
-        return "Pupil{" +
-                "id='" + id + '\'' +
-                ", ex=" + Arrays.toString(ex) +
-                ", marks=" + Arrays.toString(marks) +
-                '}';
+        StringBuilder results = new StringBuilder();
+        for (int i = 0; i < examResults.length; i++){
+            results.append("\n");
+            results.append(examResults[i].toString());
+        }
+        return "Студент " + id + results;
     }
 }
