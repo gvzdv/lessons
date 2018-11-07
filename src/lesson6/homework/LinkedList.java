@@ -7,10 +7,10 @@ public class LinkedList implements List, Queue, Stack {
 
     @Override
     public void add(ListObject obj, int index) {
-        if ((index > 0) && (index < (listSize + 2))) {
-            if (index == 1) {
+        if ((index >= 0) && (index <= listSize)){
+            if (index == 0) {
                 shift(obj);
-            } else if (index == (listSize + 1)) {
+            } else if (index == listSize) {
                 push(obj);
             } else {
                 ListObject obj1 = new ListObject(get(index));
