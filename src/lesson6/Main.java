@@ -20,9 +20,9 @@ public class Main {
         BattleUnitFactory unitFactory = new BattleUnitFactory();
         BattleUnit unit = unitFactory.create(userChoice);
 
-                Fight fight = new Fight(knight, spearman);
-                fight.fight();
-                System.out.println(fight.fightResult());
+        Fight fight = new Fight(knight, spearman);
+        fight.fight();
+        System.out.println(fight.fightResult());
 
 //        Пардигмы ООП:
 //        Абстракция - абстрактные классы и интерфейсы
@@ -34,13 +34,14 @@ public class Main {
 //        Повторное использование - можно использовать класс в другом коде без изменений
 //
 
-
-            int a = 9;
-            int b = 1;
-            Operation plus = new Plus (a, b);
-            plus.execute(); // 10
-
-            Operation minus = new Minus (a, b);
-            minus.execute(); // 8
-            }
-        }
+//
+//            int a = 9;
+//            int b = 1;
+//            Operation plus = new Plus (a, b);
+//            plus.execute(); // 10
+//
+//            Operation minus = new Minus (a, b);
+//            minus.execute(); // 8
+//            }
+    }
+}
