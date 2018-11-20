@@ -5,6 +5,7 @@ public class Cat {
     private int age;
     private int weight;
     private int strength;
+//    private int index;
 
     public Cat(String name, int age, int weight, int strength) {
         this.name = name;
@@ -27,5 +28,14 @@ public class Cat {
 
     public int getStrength() {
         return strength;
+    }
+
+    //    public int getIndex() {
+//        return index;
+//    }
+    private boolean fight(Cat anotherCat) {
+
+        return (this.strength + this.weight + this.age) > (anotherCat.strength + anotherCat.weight + anotherCat.age);
+
     }
 }
