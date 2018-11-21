@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.RandomAccess;
 import java.util.Vector;
 
 public class IOStreams {
@@ -160,5 +161,8 @@ public class IOStreams {
 
         String str = ioStreams.readURL("https://en.wikipedia.org/wiki/Uniform_Resource_Identifier", Charset.forName("UTF-8"));
         System.out.println(str);
+
+//        дз:
+//        RandomAccessFile - изучить
     }
 }
